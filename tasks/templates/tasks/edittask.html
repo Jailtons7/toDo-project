@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Editando '{{ task.title }}'
+{% endblock %}
+
+{% block content %}
+<!-- centraliza a div (12 colunas com offset de 1 e 10 colunas sendo ocupadas)-->
+<div class="offset-1 col-10 list-div">
+    <h1>Editando a tarefa '{{ task.title }}'</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- cria os campos do formulário envolvidos como parágrafos -->
+        {{ form.as_p }}
+        <input type="submit" value="Editar tarefa" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}
